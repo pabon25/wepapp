@@ -1,0 +1,8 @@
+{
+  "name": "coderwanda-webapp",
+  "version": "1.0.0",
+  "description": "CODERWANDA Ltd DevOps practical web application",
+  "main": "app.js",
+  "scripts": { "start": "node app.js", "test": "node --test" },
+  "engines": { "node": ">=20" }
+}
