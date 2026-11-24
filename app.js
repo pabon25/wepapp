@@ -16,7 +16,14 @@ function createServer() {
         res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
         return res.end('404 - Page not found');
       }
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      const contentTypes = {
+        '.html': 'text/html',
+        '.css': 'text/css',
+        '.js': 'application/javascript',
+        '.svg': 'image/svg+xml'
+      };
+      const contentType = contentTypes[path.extname(filePath)] || 'application/octet-stream';
+      res.writeHead(200, { 'Content-Type': `${contentType}; charset=utf-8` });
       res.end(content);
     });
   });
