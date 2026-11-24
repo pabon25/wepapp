@@ -9,7 +9,7 @@ test('home page responds successfully', async (t) => {
   const response = await fetch(`http://127.0.0.1:${server.address().port}/`);
   const body = await response.text();
   assert.equal(response.status, 200);
-  assert.match(body, /Welcome to WebApp/);
+  assert.match(body, /Build, ship, and/);
 });
 
 test('login page responds successfully', async (t) => {

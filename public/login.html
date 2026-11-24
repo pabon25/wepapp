@@ -7,18 +7,56 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <main class="container">
-    <p class="eyebrow">CODERWANDA LTD</p>
-    <h1>Sign in</h1>
-    <form>
-      <label for="email">Email address</label>
-      <input id="email" name="email" type="email" placeholder="you@example.com" required>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" placeholder="Enter password" required>
-      <button class="button" type="submit">Log in</button>
-    </form>
-    <p class="note">Demo interface only. Authentication is not connected to a database Will be added later.</p>
-    <a href="/">Back to home</a>
+  <main class="login-shell">
+    <section class="login-showcase" aria-label="CODERWANDA DevOps platform">
+      <a class="brand brand-light" href="/" aria-label="CODERWANDA home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 5 40 14v20L24 43 8 34V14L24 5Z"></path><path d="m16 19 8-5 8 5v10l-8 5-8-5V19Z"></path></svg>
+        </span>
+        <span>CODERWANDA</span>
+      </a>
+      <div class="showcase-copy">
+        <p class="showcase-kicker">THE DEVELOPER PLATFORM</p>
+        <h2>From code to<br>cloud, with <em>confidence.</em></h2>
+        <p>Learn the tools that power modern software delivery in one focused environment.</p>
+      </div>
+      <div class="showcase-footer">
+        <div class="avatar-group" aria-hidden="true"><span>CN</span><span>AK</span><span>JM</span></div>
+        <p><strong>Join the community</strong><br>Building for tomorrow</p>
+      </div>
+    </section>
+
+    <section class="login-panel">
+      <a class="back-link" href="/">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 4.5-5.5 5.5 5.5 5.5M7 10h10"></path></svg>
+        Back to home
+      </a>
+      <div class="login-card">
+        <div class="login-heading">
+          <span class="mini-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 5 40 14v20L24 43 8 34V14L24 5Z"></path><path d="m16 19 8-5 8 5v10l-8 5-8-5V19Z"></path></svg>
+          </span>
+          <p>Welcome back</p>
+          <h1>Sign in</h1>
+        </div>
+        <form>
+          <label for="email">Email address</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2"></rect><path d="m3.5 5.5 6.5 5 6.5-5"></path></svg>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="8" width="14" height="9" rx="2"></rect><path d="M6 8V6a4 4 0 0 1 8 0v2"></path></svg>
+            <input id="password" name="password" type="password" placeholder="Enter your password" required>
+          </div>
+          <button class="button login-button" type="submit">Sign in
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg>
+          </button>
+        </form>
+        <p class="note"><span></span> Demo interface — authentication will be connected soon.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
