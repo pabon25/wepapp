@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -6,6 +7,7 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -23,21 +25,20 @@ pipeline {
                 bat 'npm test'
             }
         }
-    }
-    
-    stage('Docker Build') {
-    steps {
-        bat 'docker build -t webapp:latest .'
-    }
-}
 
-stage('Docker Deploy') {
-    steps {
-        bat '''
-            docker stop webapp-container || exit /b 0
-            docker rm webapp-container || exit /b 0
-            docker run -d -p 3000:3000 --name webapp-container webapp:latest
-        '''
+        stage('Docker Build') {
+            steps {
+                bat 'docker build -t webapp:latest .'
+            }
+        }
+
+        stage('Docker Deploy') {
+            steps {
+                bat '''
+                    docker rm -f webapp-container 2>NUL
+                    docker run -d -p 3000:3000 --name webapp-container webapp:latest
+                '''
+            }
+        }
     }
-}
 }
